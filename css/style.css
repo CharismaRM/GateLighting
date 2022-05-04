@@ -245,7 +245,7 @@ h6 {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  max-width: 320px;
+  max-width: 340px;
 }
 
 @supports (font-size: clamp( 1.125rem , 0.9886363636rem  +  0.6818181818vw , 1.5rem )) {
@@ -268,6 +268,12 @@ h6 {
           box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
 }
 
+.menu__link_orange {
+  background: #FFAC67;
+  -webkit-box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.15);
+}
+
 .header {
   background: #545495;
   color: #FFFFFF;
@@ -284,6 +290,18 @@ h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@supports (min-height: clamp( 3.75rem , 3.2954545455rem  +  2.2727272727vw , 5rem )) {
+  .header__body {
+    min-height: clamp( 3.75rem , 3.2954545455rem  +  2.2727272727vw , 5rem );
+  }
+}
+
+@supports not (min-height: clamp( 3.75rem , 3.2954545455rem  +  2.2727272727vw , 5rem )) {
+  .header__body {
+    min-height: calc(3.75rem + 1.25 * (100vw - 20rem) / 55);
+  }
 }
 
 .header__logo {
@@ -357,6 +375,9 @@ h6 {
   background: #FFAC67;
   -webkit-box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.15);
           box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.15);
+  -webkit-transform: translate(0px, -5px);
+      -ms-transform: translate(0px, -5px);
+          transform: translate(0px, -5px);
 }
 
 .icon-menu {
@@ -425,6 +446,16 @@ h6 {
           column-gap: 5px;
 }
 
+.footer .menu__item {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .footer .menu__link {
   font-family: "Rubik";
   padding: 10px 24px;
@@ -451,6 +482,9 @@ h6 {
   background: #FFAC67;
   -webkit-box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.15);
           box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.15);
+  -webkit-transform: translate(0px, -5px);
+      -ms-transform: translate(0px, -5px);
+          transform: translate(0px, -5px);
 }
 
 @supports (margin-top: clamp( 2.625rem , 0.625rem  +  10vw , 8.125rem )) {
@@ -489,11 +523,15 @@ h6 {
 }
 
 .offer__text {
-  margin: 0px 0px 60px 0px;
+  margin: 0px 0px 40px 0px;
   font-style: italic;
   font-weight: 400;
   line-height: 1.2222222222;
   color: #000000;
+}
+
+.offer__btn {
+  width: 100%;
 }
 
 .offer__sub-text {
@@ -602,6 +640,7 @@ h6 {
   font-weight: 400;
   font-size: 18px;
   line-height: 1.2222222222;
+  margin: 0px 0px 20px 0px;
   text-align: center;
   color: #FFFFFF;
 }
@@ -658,9 +697,6 @@ h6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-column-gap: 15px;
      -moz-column-gap: 15px;
           column-gap: 15px;
@@ -849,9 +885,6 @@ h6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   margin: 0px 0px 20px 0px;
   font-family: "Inter";
   font-style: normal;
@@ -960,9 +993,6 @@ h6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-column-gap: 15px;
      -moz-column-gap: 15px;
           column-gap: 15px;
@@ -1063,6 +1093,8 @@ h6 {
   font-size: 20px;
   line-height: 1.2;
   margin: 0px 0px 20px 0px;
+  z-index: 1;
+  position: relative;
 }
 
 .card__list {
@@ -1081,6 +1113,8 @@ h6 {
 }
 
 .card__btn {
+  position: relative;
+  z-index: 1;
   background: #7AC5CA;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -1186,6 +1220,10 @@ h6 {
     padding: 0 0.9375rem;
   }
 
+  .btn {
+    max-width: 300px;
+  }
+
   .header__body {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
@@ -1204,8 +1242,9 @@ h6 {
 
   .header .menu__body {
     position: fixed;
-    width: 250px;
+    width: 85%;
     height: 100%;
+    padding: 50px 25px 0px 25px;
     background: #545495;
     -webkit-backdrop-filter: blur(30px);
             backdrop-filter: blur(30px);
@@ -1217,9 +1256,6 @@ h6 {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
     -webkit-transition: all 0.5s ease 0s;
     -o-transition: all 0.5s ease 0s;
     transition: all 0.5s ease 0s;
@@ -1241,13 +1277,20 @@ h6 {
         -ms-flex-direction: column;
             flex-direction: column;
     row-gap: 10px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .header .menu__item {
+    width: 250px;
   }
 
   .header .menu__link {
     background: #FFAC67;
     -webkit-box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.15);
             box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.15);
-    width: 160px;
+    width: 100%;
   }
 
   .icon-menu {
@@ -1335,6 +1378,10 @@ h6 {
     margin: 0px 0px 40px 0px;
   }
 
+  .footer .menu {
+    width: 100%;
+  }
+
   .footer .menu__list {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
@@ -1345,11 +1392,21 @@ h6 {
             align-items: center;
   }
 
+  .footer .menu__link {
+    width: 100%;
+  }
+
   .offer__body {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+
+  .offer__description {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 
   .offer__content {
@@ -1368,6 +1425,16 @@ h6 {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+
+  .opportunities__description {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .opportunities__btn {
+    width: 100%;
   }
 
   .opportunities__image {
@@ -1396,6 +1463,16 @@ h6 {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+
+  .use__description {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .use__btn {
+    width: 100%;
   }
 
   .use__image {
